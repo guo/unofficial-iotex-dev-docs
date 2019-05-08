@@ -30,7 +30,7 @@ ioctl config set endpoint api.testnet.iotex.one:443 && echo 'switched to testnet
 ```
 They are useful if you switch between mainnet and test frequently.
 
-## deploy smart contract
+## using smart contract
 
 use remix to compile your smart contract and find the bytecode, remove the first two chararacters `0x`. Then deploy using
 ```
