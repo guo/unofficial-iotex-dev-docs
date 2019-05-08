@@ -30,3 +30,20 @@ ioctl config set endpoint api.testnet.iotex.one:443 && echo 'switched to testnet
 ```
 They are useful if you switch between mainnet and test frequently.
 
+## deploy smart contract
+
+use remix to compile your smart contract and find the bytecode, remove the first two chararacters `0x`. Then deploy using
+```
+#ioctl action deploy -s [signer] -l [gas limit] -b [bytecode]
+```
+
+To prepare to invoke individual functions, you need to deploy smart contract using VM on remix. 
+
+Read contract. find bytecode of a read function.
+```
+#ioctl action read -s [signer] -l [gas limit] -b [bytecode]
+```
+Invoke contract. find the bytecode of a write function, then call through ioctl.
+```
+#ioctl action invoke -s [signer] -l [gas limit] -b [bytecode]
+```
