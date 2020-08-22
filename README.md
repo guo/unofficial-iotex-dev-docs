@@ -47,3 +47,35 @@ Invoke contract. find the bytecode of a write function, then call through ioctl.
 ```
 #ioctl action invoke -s [signer] -l [gas limit] -b [bytecode]
 ```
+
+## debug
+get into docker's runtime. since `v1.1`, IoTeX uses alphine linux https://alpinelinux.org/. It is a miminal linux image. You need to install software/pkg as needed.
+
+```
+sudo docker exec -it iotex /bin/sh
+```
+
+install `curl`
+
+```
+apk add --no-cache curl
+```
+
+install `golang`
+
+```
+apk add --no-cache golang
+```
+
+open `debug` logs
+```
+curl -X PUT -d '{"level":"debug"}'  localhost:9009/logging/global
+```
+
+open `info` logs
+```
+curl -X PUT -d '{"level":"info"}' localhost:9009/logging/global
+```
+
+
+  
